@@ -5,6 +5,14 @@ const p1_btn = document.querySelector('#p1_btn');
 const p2_btn = document.querySelector('#p2_btn');
 const reset = document.querySelector('#reset');
 
+p1_btn.addEventListener('click',function(){
+    updateScore(p1_score);
+})
+
+p2_btn.addEventListener('click',function(){
+    updateScore(p2_score);
+})
+
 function updateScore(score) {
     let currScore = parseInt(score.innerText);
     if(currScore<maxScore.value){
@@ -16,14 +24,6 @@ function updateScore(score) {
         p2_btn.disabled = true;
     }
 }
-
-p1_btn.addEventListener('click',function(){
-    updateScore(p1_score);
-})
-
-p2_btn.addEventListener('click',function(){
-    updateScore(p2_score);
-})
 
 reset.addEventListener('click',function(){
     p1_score.innerText = 0;
